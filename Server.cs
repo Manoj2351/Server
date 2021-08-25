@@ -13,6 +13,7 @@ namespace Server
 
         public static void Start()
         {
+            InitializeData();
             listener = new TcpListener(System.Net.IPAddress.Any,8888);
             listener.Start();
 
@@ -37,11 +38,11 @@ namespace Server
             listener.BeginAcceptTcpClient(TCPConnectCallback,null);
         }
 
-        public void InitializeData()
+        static void InitializeData()
         {
             for (int i = 1; i <= MaxPlayers; i++)
             {
-                Clients.Add(1,new Client(i));
+                Clients.Add(i,new Client(i));
             }
         }
     }

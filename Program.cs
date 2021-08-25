@@ -8,7 +8,21 @@ namespace Server
         {
             Console.WriteLine("Server started");
             Server.Start();
-            Console.ReadKey();
+            string input = Console.ReadLine();
+            if(input == "/Client")
+            {
+                ShowClient();    
+            }
+        }
+
+        public static void ShowClient()
+        {
+            for (int i = 1; i <= 3;i++)
+            {
+                Console.WriteLine(Server.Clients[i]);
+            }
+            Console.ReadLine();
+            
         }
     }
 }
