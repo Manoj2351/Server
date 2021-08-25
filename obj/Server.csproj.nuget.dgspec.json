@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Manoj\\Networking\\Server\\Server.csproj": {}
+    "D:\\Manoj\\Networking 2\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\Manoj\\Networking\\Server\\Server.csproj": {
+    "D:\\Manoj\\Networking 2\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Manoj\\Networking\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\Manoj\\Networking 2\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\Manoj\\Networking\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\kvssm\\.nuget\\packages\\",
-        "outputPath": "D:\\Manoj\\Networking\\Server\\obj\\",
+        "projectPath": "D:\\Manoj\\Networking 2\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\Manoj\\.nuget\\packages\\",
+        "outputPath": "D:\\Manoj\\Networking 2\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kvssm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Manoj\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.206\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

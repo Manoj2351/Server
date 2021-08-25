@@ -8,8 +8,8 @@ namespace Server
     class Server
     {
         public static TcpListener listener;
-        public static Dictionary<int,TcpClient> Clients = new Dictionary<int, TcpClient>();
-        private int MaxPlayers = 3;
+        public static Dictionary<int,Client> Clients = new Dictionary<int, Client>();
+        public static int MaxPlayers = 3;
 
         public static void Start()
         {
@@ -25,11 +25,11 @@ namespace Server
         {
             TcpClient client = listener.EndAcceptTcpClient(_result);
             //TODO maybe even open a thread for every client (more research on that later)
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= MaxPlayers; i++)
             {
                 if (Clients[i] ==  null)
                 {
-                    
+                    Clients[i].Tcp.Connect(client);
                 }
             }
             
@@ -39,7 +39,10 @@ namespace Server
 
         public void InitializeData()
         {
-            
+            for (int i = 1; i <= MaxPlayers; i++)
+            {
+                Clients.Add(1,new Client(i));
+            }
         }
     }
 }
