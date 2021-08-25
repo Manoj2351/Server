@@ -6,7 +6,9 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Server started");
+            Server.Start();
+            Console.ReadKey();
         }
     }
 }
