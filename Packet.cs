@@ -5,7 +5,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Server
 {
-    [SerializableAttribute]
     public class Packet
     {
         public byte[] ReadableBuffer;
@@ -21,12 +20,16 @@ namespace Server
             Buffer.InsertRange(0,Encoding.ASCII.GetBytes(_string)); 
         }
 
+        public int Length()
+        {
+            return Buffer.Count;
+        }
+
         public byte[] ConvertToArray()
         {
             ReadableBuffer = Buffer.ToArray();
             return ReadableBuffer;
-        }
-        
+        }        
         
         //reference https://github.com/tom-weiland/tcp-udp-networking/blob/8692304a76abb56fc3145fd01cd09339b1347b2b/GameClient/Assets/Scripts/Packet.cs#L131
 

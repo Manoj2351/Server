@@ -31,8 +31,7 @@ namespace Server
                 if (Clients[i] ==  null)
                 {
                     Clients[i].Tcp.Connect(client);
-                    Clients[i].Tcp.SendPacket(new Packet("Welcome to server UwU"));
-                    SendInput();
+                    Clients[i].Tcp.SendPacket(new Packet("Welcome to server"));
                 }
             }
             
@@ -50,22 +49,5 @@ namespace Server
             }
         }
 
-        public static void SendInput()
-        {
-            try
-            {
-                Clients[1].Tcp.SendPacket(new Packet(Console.ReadLine()));
-            }
-            catch
-            {
-
-            }
-            finally
-            {
-                SendInput();
-            }
-            
-            
-        }
     }
 }

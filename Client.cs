@@ -30,9 +30,7 @@ namespace Server
             {
                 try
                 {
-                    byte[] _dataToSend = Serializer.Serialize(_packet);
-                    NetworkStream.Write(_dataToSend,0,_dataToSend.Length);
-                    Console.WriteLine("Sent Packet");
+                    NetworkStream.Write(_packet.ConvertToArray(),0,_packet.Length());
                 }
                 catch (Exception e)
                 {
