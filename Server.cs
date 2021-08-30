@@ -31,8 +31,12 @@ namespace Server
                 if (Clients[i] ==  null)
                 {
                     Clients[i].Tcp.Connect(client);
+                    Clients[i].Tcp.SendPacket(new Packet("Welcome to server UwU"));
+                    SendInput();
                 }
             }
+            
+            
             
             Console.WriteLine($"Incoming connection from {client.Client.RemoteEndPoint} has been accepted");
             listener.BeginAcceptTcpClient(TCPConnectCallback,null);
@@ -44,6 +48,24 @@ namespace Server
             {
                 Clients.Add(i,new Client(i));
             }
+        }
+
+        public static void SendInput()
+        {
+            try
+            {
+                Clients[1].Tcp.SendPacket(new Packet(Console.ReadLine()));
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                SendInput();
+            }
+            
+            
         }
     }
 }

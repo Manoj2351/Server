@@ -4,25 +4,14 @@ namespace Server
 {
     class Program
     {
+        public static string Input;
         static void Main(string[] args)
         {
             Console.WriteLine("Server started");
             Server.Start();
-            string input = Console.ReadLine();
-            if(input == "/Client")
-            {
-                ShowClient();    
-            }
+            Server.SendInput();
         }
 
-        public static void ShowClient()
-        {
-            for (int i = 1; i <= 3;i++)
-            {
-                Console.WriteLine(Server.Clients[i]);
-            }
-            Console.ReadLine();
-            
-        }
+        
     }
 }
